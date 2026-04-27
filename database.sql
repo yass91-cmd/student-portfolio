@@ -1,11 +1,7 @@
 -- PortfolioHub Database Schema
 -- Run this file to set up the database
-
-CREATE DATABASE IF NOT EXISTS student_portfolio
-    CHARACTER SET utf8mb4
-    COLLATE utf8mb4_unicode_ci;
-
-USE student_portfolio;
+-- NOTE: On shared hosts (InfinityFree etc.) the database already exists.
+-- Import this file while already inside your database in phpMyAdmin.
 
 -- Users table
 CREATE TABLE IF NOT EXISTS users (
