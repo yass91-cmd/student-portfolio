@@ -1,0 +1,22 @@
+# Uploaded user files — never commit real photos
+assets/uploads/avatars/*
+!assets/uploads/avatars/.gitkeep
+
+# Environment / secrets
+.env
+.env.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PHP temp / logs
+*.log
+error_log

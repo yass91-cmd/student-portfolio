@@ -1,0 +1,142 @@
+/* ═══════════════════════════════════════════════
+   Portfolio Template 2 — Minimal Clean
+   Pure white, elegant serif-ish typography, subtle dividers
+═══════════════════════════════════════════════ */
+
+:root {
+  --t2-accent:  #6366f1;
+  --t2-accent2: #06b6d4;
+  --t2-bg:      #ffffff;
+  --t2-bg2:     #fafafa;
+  --t2-border:  #ebebeb;
+  --t2-text:    #111111;
+  --t2-text2:   #444444;
+  --t2-muted:   #888888;
+  --t2-font:    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--t2-font); background: var(--t2-bg); color: var(--t2-text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+/* ── Action bar ─────────────────────────────── */
+.pf-actions {
+  position: fixed; top: 20px; right: 20px; z-index: 100;
+  display: flex; gap: 8px;
+}
+.pf-actions a, .pf-actions button {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 14px; border-radius: 6px; font-size: 13px; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--t2-border); font-family: var(--t2-font);
+  transition: all .2s ease;
+}
+.pf-btn-edit { background: var(--t2-bg); color: var(--t2-text); }
+.pf-btn-edit:hover { border-color: var(--t2-accent); color: var(--t2-accent); }
+.pf-btn-pdf  { background: var(--t2-accent); color: #fff; border-color: var(--t2-accent); }
+.pf-btn-pdf:hover { background: #4338ca; border-color: #4338ca; }
+.pf-btn-copy { background: var(--t2-bg); color: var(--t2-accent2); border-color: var(--t2-accent2); }
+.pf-btn-copy:hover { background: #ecfeff; }
+
+/* ── Outer wrapper ───────────────────────────── */
+.pf-wrapper { max-width: 780px; margin: 0 auto; padding: 0 24px; }
+
+/* ── Header ──────────────────────────────────── */
+.pf-header {
+  padding: 80px 24px 0;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.pf-header-inner { display: flex; align-items: flex-start; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid var(--t2-border); }
+.pf-avatar {
+  width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--t2-accent), var(--t2-accent2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px; font-weight: 800; color: #fff;
+}
+.pf-avatar-img {
+  width: 90px; height: 90px; border-radius: 50%; flex-shrink: 0;
+  object-fit: cover;
+  border: 3px solid var(--t2-border);
+}
+.pf-header-text { flex: 1; }
+.pf-name { font-size: clamp(24px, 4vw, 38px); font-weight: 800; letter-spacing: -.03em; margin-bottom: 10px; }
+.pf-bio  { font-size: 15px; color: var(--t2-text2); line-height: 1.8; margin-bottom: 18px; }
+.pf-social { display: flex; gap: 10px; flex-wrap: wrap; }
+.pf-social a {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--t2-muted); font-size: 13px; font-weight: 500;
+  padding: 5px 0; border-bottom: 1px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.pf-social a:hover { color: var(--t2-accent); border-color: var(--t2-accent); }
+
+/* ── Main & sections ─────────────────────────── */
+.pf-main { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+
+.pf-section { padding: 40px 0; border-bottom: 1px solid var(--t2-border); }
+.pf-section:last-child { border-bottom: none; }
+
+.pf-section-head { display: flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+.pf-section-head h2 { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--t2-muted); }
+.pf-section-line { flex: 1; height: 1px; background: var(--t2-border); }
+
+/* ── Skills ──────────────────────────────────── */
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-pill {
+  padding: 5px 14px; border-radius: 4px; border: 1px solid var(--t2-border);
+  font-size: 13px; font-weight: 500; color: var(--t2-text2);
+  transition: all .2s ease;
+}
+.skill-pill:hover { border-color: var(--t2-accent); color: var(--t2-accent); background: rgba(99,102,241,.04); }
+
+/* ── Projects ────────────────────────────────── */
+.projects-list { display: flex; flex-direction: column; gap: 24px; }
+.project-card { display: flex; gap: 20px; align-items: flex-start; }
+.project-num {
+  font-size: 12px; font-weight: 700; color: var(--t2-muted); min-width: 28px;
+  padding-top: 3px; text-align: right;
+}
+.project-body { flex: 1; border-bottom: 1px solid var(--t2-border); padding-bottom: 24px; }
+.projects-list .project-card:last-child .project-body { border-bottom: none; padding-bottom: 0; }
+.project-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.project-title { font-size: 16px; font-weight: 700; }
+.project-link  { color: var(--t2-accent); font-size: 16px; }
+.project-link:hover { color: var(--t2-accent2); }
+.project-desc  { font-size: 14px; color: var(--t2-text2); line-height: 1.7; margin-bottom: 12px; }
+.project-tech-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.project-tech { font-size: 11px; color: var(--t2-muted); }
+.project-tech::after { content: '·'; margin-left: 6px; }
+.project-tech:last-child::after { display: none; }
+
+/* ── Education ───────────────────────────────── */
+.edu-list { display: flex; flex-direction: column; gap: 20px; }
+.edu-entry { display: grid; grid-template-columns: 160px 1fr; gap: 16px; }
+.edu-year  { font-size: 13px; color: var(--t2-muted); padding-top: 2px; }
+.edu-body  { }
+.edu-degree { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+.edu-school { font-size: 14px; color: var(--t2-accent); font-weight: 500; margin-bottom: 6px; }
+.edu-desc   { font-size: 13px; color: var(--t2-muted); line-height: 1.6; }
+
+/* ── Footer ──────────────────────────────────── */
+.pf-footer {
+  border-top: 1px solid var(--t2-border);
+  text-align: center; padding: 28px 24px;
+  font-size: 12px; color: var(--t2-muted);
+  max-width: 780px; margin: 0 auto;
+}
+.pf-footer a { color: var(--t2-accent); }
+
+/* ── Print ───────────────────────────────────── */
+@media print {
+  .pf-actions { display: none; }
+  .pf-section { break-inside: avoid; }
+}
+
+/* ── Responsive ──────────────────────────────── */
+@media (max-width: 640px) {
+  .pf-header-inner { flex-direction: column; gap: 20px; }
+  .pf-avatar       { width: 72px; height: 72px; font-size: 26px; }
+  .edu-entry       { grid-template-columns: 1fr; gap: 4px; }
+  .pf-actions { top: auto; bottom: 16px; right: 16px; flex-direction: column; }
+}
